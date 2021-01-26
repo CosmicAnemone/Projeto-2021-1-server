@@ -1,0 +1,27 @@
+plugins {
+    id "io.ratpack.ratpack-java" version "1.8.0"
+}
+
+repositories {
+    jcenter()
+}
+
+mainClassName = "Main"
+
+dependencies {
+    //Remove Heroku once/if I'm sure it isn't needed, since this project isn't strictly focused on it.
+    implementation "com.heroku.sdk:heroku-jdbc:0.1.1"
+    //for logging control
+    implementation 'org.apache.logging.log4j:log4j-to-slf4j:2.11.0'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+    //MongoDB for data persistence
+    implementation 'org.mongodb:mongodb-driver-reactivestreams:4.0.5'
+    //OkHTTP3 for Rest requests
+    implementation 'com.squareup.okhttp3:mockwebserver:4.7.2'
+    //Google libraries with cool collection types
+    implementation 'com.google.guava:guava:28.0-jre'
+}
+
+task stage() {
+    dependsOn(installDist)
+}
