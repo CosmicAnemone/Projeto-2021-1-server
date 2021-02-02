@@ -5,7 +5,7 @@ import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.LoggerContext;
 import database.DatabaseManager;
 import database.EmpresaManager;
-import database.FuncionarioManager;
+import network.RequestHandler;
 import org.slf4j.LoggerFactory;
 
 public class LogUtils {
@@ -21,7 +21,7 @@ public class LogUtils {
 		loggerContext.getLogger(EnvUtils.class).setLevel(Level.TRACE);
 		loggerContext.getLogger(DatabaseManager.class).setLevel(Level.TRACE);
 		loggerContext.getLogger(EmpresaManager.class).setLevel(Level.TRACE);
-		loggerContext.getLogger(FuncionarioManager.class).setLevel(Level.TRACE);
+		loggerContext.getLogger(RequestHandler.class).setLevel(Level.TRACE);
 		mainLog.setLevel(Level.TRACE);
 		LOG.setLevel(Level.INFO);
 		LOG.info("Logs configured");

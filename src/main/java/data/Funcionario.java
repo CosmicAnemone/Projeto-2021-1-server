@@ -28,7 +28,18 @@ public class Funcionario {
 		}
 	}
 	
+	public static Document saveEmpresaOrEmpty(Funcionario funcionario, String empresa){
+		if(funcionario == null){
+			return Empresa.empty.save();
+		}
+		else {
+			return funcionario.empresas.getOrDefault(empresa, Empresa.empty).save();
+		}
+	}
+	
 	public static class Empresa {
+		private static Empresa empty = new Empresa(new String[0], new Document());
+		
 		private final String[] beneficios;
 		private final Document campos;
 		
