@@ -19,7 +19,7 @@ public class Main {
 		}
 		LOG.info("Environment variables loaded");
 		
-		LOG.info("Starting server");
+		LOG.info("Starting server on port " + EnvUtils.PORT);
 		NetworkMain.create();
 		LOG.info("Server started");
 		
