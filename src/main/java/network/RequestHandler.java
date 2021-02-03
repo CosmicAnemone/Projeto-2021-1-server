@@ -6,6 +6,7 @@ import data.Funcionario;
 import database.DatabaseManager;
 import database.EmpresaManager;
 import database.FuncionarioManager;
+import org.bson.BsonInvalidOperationException;
 import org.bson.Document;
 import org.bson.json.JsonParseException;
 import org.slf4j.LoggerFactory;
@@ -54,7 +55,7 @@ public class RequestHandler {
 			Document document;
 			try {
 				document = Document.parse(body.getText());
-			} catch (JsonParseException | IllegalArgumentException e) {
+			} catch (JsonParseException | IllegalArgumentException | BsonInvalidOperationException e) {
 				invalidRequest(context, "Pedido POST com JSON inválido");
 				return;
 			}

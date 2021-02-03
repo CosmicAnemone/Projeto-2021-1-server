@@ -71,6 +71,7 @@ public class Empresa {
 		private Document save() {
 			Document document = new Document();
 			campos.forEach(document::append);
+			document.remove(Field.CPF);
 			return document;
 		}
 	}

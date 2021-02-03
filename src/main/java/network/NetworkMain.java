@@ -12,7 +12,7 @@ public class NetworkMain {
 					.serverConfig(server->server
 							.port(EnvUtils.PORT))
 					.handlers(chain->chain
-							.get("registro", RequestHandler::handleGet)
+							.get("info", RequestHandler::handleGet)
 							.post("registro", RequestHandler::handlePost))
 			);
 		}
