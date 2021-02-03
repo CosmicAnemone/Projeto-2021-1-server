@@ -39,6 +39,9 @@ class LocalMain {
 		registraEmpresa(new Empresa("Acme Co", norteEuropa, dentalSorriso));
 		registraEmpresa(new Empresa("Tio Patinhas Bank", pampulhaIntermedica, dentalSorriso, menteSaCorpoSao));
 		
+		LOG.info("Closing database");
+		DatabaseGenerator.close();
+		
 		LOG.info("Finished");
 	}
 	

@@ -18,9 +18,10 @@ import static database.DatabaseCommons.*;
 
 class DatabaseGenerator {
 	private static MongoCollection<Document> empresas;
+	private static MongoClient mongoClient;
 	
 	static void init() {
-		MongoClient mongoClient = MongoClients.create(EnvUtils.DB_connection_string);
+		mongoClient = MongoClients.create(EnvUtils.DB_connection_string);
 		MongoDatabase database = mongoClient.getDatabase(EnvUtils.database_name);
 		LinkedList<String> collectionNames = getAll(database.listCollectionNames());
 		empresas = getCollection(database, collectionEmpresasName, collectionNames);
@@ -40,5 +41,9 @@ class DatabaseGenerator {
 		return getFirst(empresas.replaceOne(Filters.eq(Field.nome, empresa.nome),
 				empresa.save(),
 				new ReplaceOptions().upsert(true)));
+	}
+	
+	static void close() {
+		mongoClient.close();
 	}
 }
