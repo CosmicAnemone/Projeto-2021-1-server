@@ -1,4 +1,4 @@
-Servidor do Projeto Pipo, feito em Java, usando o Ratpack
+Servidor, feito em Java, usando o Ratpack
 
 - Para buildar, crie um projeto gradle, com Java 15, clone o repositório para a pasta raiz do projeto e aplique as dependências no arquivo "build.gradle'.
 - Para rodar o servidor, execute o método "main" da classe "Main"
@@ -16,8 +16,8 @@ Nome do banco de dados utilizado (string)
 
 Links úteis:
 - Notion
-https://www.notion.so/Projeto-Pipo-1e74d4e1cf524523b4883c3245ef9cf9
+https://www.notion.so/Projeto-2020-1-1e74d4e1cf524523b4883c3245ef9cf9
 - Trello
 https://trello.com/b/OSyYbTwP
 - Repositório do cliente
-https://github.com/CosmicAnemone/ProjetoPipo-client/
+https://github.com/CosmicAnemone/Projeto-2021-1-client
